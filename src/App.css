@@ -1,0 +1,18 @@
+
+.App {
+    text-align: center;
+    color: #fff; 
+
+    background: url('assets/img/Background5.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
