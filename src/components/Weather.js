@@ -17,7 +17,7 @@ function Weather() {
         try {
             const paramsString = queryString.stringify(foreCast);
             console.log(paramsString);
-            const url = `http://api.weatherapi.com/v1/forecast.json?key=eea0c8a5ff5c47a880d104712212906&${paramsString}`;
+            const url = `https://api.weatherapi.com/v1/forecast.json?key=eea0c8a5ff5c47a880d104712212906&${paramsString}`;
             const responseJSON = await (await fetch(url)).json();
             console.log(responseJSON);
             setWeatherList(responseJSON);
