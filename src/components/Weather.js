@@ -2,7 +2,7 @@ import WeatherFilter from './WeatherFilter'
 import WeatherCurrent from "./WeatherCurrent";
 import WeatherList from "./WeatherList";
 import queryString from "query-string";
-import './Weather.css';
+import '../assets/scss/Weather.css';
 import React, { useState, useEffect } from "react";
 
 function Weather() {
@@ -36,9 +36,9 @@ function Weather() {
     }
     return (
         <div id="weather">
-        <WeatherFilter onSubmit={handleSearch} />
-        <WeatherCurrent value={weatherList} />
-        <WeatherList value={weatherList} />
+            <WeatherFilter onSubmit={handleSearch} />
+            <WeatherCurrent value={weatherList} />
+            <WeatherList value={weatherList} />
         </div>
     );
 }

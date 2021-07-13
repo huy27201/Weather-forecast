@@ -1,0 +1,212 @@
+@mixin transparentBackground {
+    background-color: rgba(255, 255, 255, .1);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+}
+
+#weather {
+    padding: 2.5rem 15px;
+    box-sizing: border-box;
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+}
+.filter {
+    margin: 0 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .search {
+        border: none;
+        border-bottom: solid 2px #ddd;
+        margin: 1rem 2rem 0;
+        outline: none;
+    
+        color: #fff;
+        background-color: transparent;
+        font-size: 20px;
+        
+        &::placeholder {
+            color: #ccc;
+        }
+        &:focus {
+            border-bottom: solid 2px #fafafa;
+        }
+    }
+    .btn {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        cursor: pointer;
+    
+        margin: 1rem 2rem 0;
+        padding: 10px 20px;
+        border: solid 1px #fff;
+        border-radius: 2px;
+    
+        background-color: transparent; 
+        color: #fff;     
+        font-size: 1rem;
+        transition: 0.3s ease;
+        
+        &::before {
+            content: '';
+        
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -10%;
+            right: 0;
+        
+            width: 0;
+            background-color:  #fff;
+            transition: 0.3s ease;
+            transform: skewX(20deg);
+        }
+        &:focus {
+            outline: none;
+        }
+        &:hover {
+            color: #000;
+        }
+        &:hover::before {
+            width: 120%;
+            z-index: -1;
+        }
+    }
+}
+
+.weather-current {
+    @include transparentBackground();
+
+    display: inline-block;
+    width: 40%;
+    margin: 1.5rem auto;
+    padding: 1.7rem 1rem;
+    transition: 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+    h1 {
+        font-size: 2.5rem;
+        margin: 0;
+    }
+    .current-img {
+        width: 7rem;
+    }
+    .current {
+        font-size: 1.6rem;
+    }
+}
+.temp, .time {
+    margin: 0 0 0.8rem 0;
+}
+.describe {
+    margin: 0;
+}
+.forecast-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+.forecast-item {  
+    @include transparentBackground();
+
+    flex-basis: calc(16.5% - 2rem);
+    padding: 1.7rem 1rem;
+    margin-bottom: 1rem;
+    transition: 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+
+@media screen and (max-width: 1300px) {
+    #weather {
+        max-width: 992px;
+    }
+    .weather-current {
+        width: 50%;
+    }
+    .forecast-item {
+        flex-basis: 27%;
+    }
+}
+@media screen and (max-width: 992px) {
+    #weather {
+        max-width: 768px;
+    }
+    .filter {
+        .btn {
+            font-size: 0.9rem;
+        }
+        .search {
+            font-size: 1.1rem;
+        }
+    }
+    .weather-current {
+        width: 45%;
+        h1 {
+            font-size: 2.2rem;
+        }
+        .current-img {
+            width: 5rem;
+        }
+        .current {
+            font-size: 1.3rem;
+        }
+    }
+    
+}
+@media screen and (max-width: 768px) {
+    #weather {
+        max-width: 540px;
+    }
+    .filter {
+        .btn {
+            font-size: 0.8rem;
+            padding: 0.5 1rem;
+            margin: 1rem 1rem 0;
+        }
+        .search {
+            font-size: 0.9rem;
+            margin: 1rem 1rem 0;
+        }
+    }
+    .weather-current {
+        width: 60%;
+        h1 {
+            font-size: 2.2rem;
+        }
+        .current-img {
+            width: 5rem;
+        }
+        .current {
+            font-size: 1.3rem;
+        }
+    }
+    .forecast-item {
+        flex-basis: 40%;
+    }
+
+}
+@media screen and (max-width: 540px) {
+    .forecast-item {
+        flex-basis: 85%;
+    }
+    .weather-current {
+        h1 {
+            font-size: 1.8rem;
+        }
+        .current-img {
+            width: 4.5rem;
+        }
+        .current {
+            font-size: 1.2rem;
+        }
+    }
+}
