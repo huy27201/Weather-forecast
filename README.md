@@ -4,13 +4,13 @@
 
 ## Usage
 
-Type the city you want to see the weather forecast into the input text.
+Type the city you want to see the weather forecast into the text input.
 
 Ex: Tokyo, London...
 
 ## Differrent background
 
-You can use the background in **src/asset/img**.
+You can use the background in **src/assets/img**.
 
 In the **src/App.css**: 
 ```
