@@ -8,7 +8,7 @@ Type the city you want to see the weather forecast into the text input.
 
 Ex: Tokyo, London...
 
-## Differrent background
+## Different background
 
 You can use the background in **src/assets/img**.
 
