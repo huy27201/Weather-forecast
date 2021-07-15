@@ -12,7 +12,7 @@ Ex: Tokyo, London...
 
 You can use the background in **src/asset/img**.
 
-In the src/App.css: 
+In the **src/App.css**: 
 ```
 .App {
     background: url('assets/img/Background5.jpg');
