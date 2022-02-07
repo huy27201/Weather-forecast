@@ -1,14 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function WeatherFilter(props) {
-    
+    const [searchTerm, setSearchTerm] = useState('')
+
     function handleSubmit(e) {
         e.preventDefault()  
-        props.onSubmit(e.target.elements.city.value)
+        props.onSubmit(searchTerm)
+    }
+
+    const handleChange = event => {
+        const value = event.target.value
+        setSearchTerm(value)
     }
     return (
         <form className = 'filter' onSubmit = {handleSubmit}>
-            <input name='city' className='search' type='text' autoComplete='off' placeholder='Enter the location.'/>
+            <input 
+                className='search' 
+                type='text' 
+                autoComplete='off' 
+                placeholder='Enter the location' 
+                onChange={handleChange}
+                value = {searchTerm} 
+            />
             <button className='btn'>Search</button>
         </form>
     )

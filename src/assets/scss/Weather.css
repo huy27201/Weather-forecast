@@ -200,17 +200,8 @@
   #weather {
     max-width: 540px;
   }
-  .filter .btn {
-    font-size: 0.8rem;
-    padding: 0.5 1rem;
-    margin: 1rem 1rem 0;
-  }
-  .filter .search {
-    font-size: 0.9rem;
-    margin: 1rem 1rem 0;
-  }
   .weather-current {
-    width: 60%;
+    width: 65%;
   }
   .weather-current h1 {
     font-size: 2.2rem;
@@ -233,7 +224,7 @@
         flex-basis: 85%;
   }
   .weather-current h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
   .weather-current .current-img {
     width: 4.5rem;
