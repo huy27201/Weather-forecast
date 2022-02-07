@@ -6,6 +6,7 @@ import '../assets/scss/Weather.css';
 import React, { useState, useEffect } from "react";
 
 
+
 function Weather() {
     const [weatherList, setWeatherList] = useState({});
 
