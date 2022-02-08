@@ -15,22 +15,41 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 
-    .search {
-        border: none;
-        border-bottom: solid 2px #ddd;
+    .search-container {
         margin: 1rem 2rem 0;
-        outline: none;
-    
-        color: #fff;
-        background-color: transparent;
-        font-size: 20px;
-        
-        &::placeholder {
-            color: #ccc;
+        position: relative;
+        .search {
+            border: none;
+            border-bottom: solid 2px #ddd;
+            
+            outline: none;
+            padding: 0.5rem;
+            box-sizing: border-box;
+            color: #fff;
+            background-color: transparent;
+            font-size: 20px;
+            
+            &::placeholder {
+                color: #ccc;
+            }
+            &:focus {
+                border-bottom: solid 2px #fafafa;
+            }
         }
-        &:focus {
-            border-bottom: solid 2px #fafafa;
+        .location {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: 0.3s ease;
+
+            &:hover {
+                opacity: 0.9;
+            }
         }
     }
     .btn {

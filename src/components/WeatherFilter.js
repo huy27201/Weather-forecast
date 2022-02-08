@@ -1,11 +1,17 @@
 import React, { useState } from 'react'
+import { BiCurrentLocation } from 'react-icons/bi'
+import ReactTooltip from 'react-tooltip'
 
 function WeatherFilter(props) {
     const [searchTerm, setSearchTerm] = useState('')
 
-    function handleSubmit(e) {
+    const handleSubmit = e => {
         e.preventDefault()  
         props.onSubmit(searchTerm)
+    }
+    
+    const handleCurrent = () => { 
+        props.onCurrent()
     }
 
     const handleChange = event => {
@@ -14,14 +20,18 @@ function WeatherFilter(props) {
     }
     return (
         <form className = 'filter' onSubmit = {handleSubmit}>
-            <input 
-                className='search' 
-                type='text' 
-                autoComplete='off' 
-                placeholder='Enter the location' 
-                onChange={handleChange}
-                value = {searchTerm} 
-            />
+            <div className='search-container'>
+                <input 
+                    className='search' 
+                    type='text' 
+                    autoComplete='off' 
+                    placeholder='Enter the city' 
+                    onChange={handleChange}
+                    value = {searchTerm} 
+                />
+                <BiCurrentLocation className='location' data-tip="Current location" onClick={handleCurrent}/>
+                <ReactTooltip place="bottom" type="dark" effect="float"/>
+            </div>
             <button className='btn'>Search</button>
         </form>
     )
