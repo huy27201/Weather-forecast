@@ -49,7 +49,7 @@ function Weather() {
 
     useEffect(() => {
         getLocation();
-    }, [])
+    }, [getLocation])
 
     // get the weather forcast based on the search keyword
     useEffect(() => {
