@@ -49,7 +49,8 @@ function Weather() {
 
     useEffect(() => {
         getLocation();
-    }, [getLocation])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     // get the weather forcast based on the search keyword
     useEffect(() => {
