@@ -34,7 +34,7 @@ function Weather() {
         const res = await (await fetch(url)).json();
         console.log(res);
 
-        const region = res.features.length > 0 ? res.features.find(item => item.id.includes("region")) : ''; // check exists region
+        const region = res.features.length > 0 ? res.features.find(item => item.id.includes("place")) : ''; // check exists region
         if (region) {
             handleSearch(region.text);  //city
         }
