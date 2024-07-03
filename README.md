@@ -1,6 +1,6 @@
 # Weather Forecast
 
-[Click here to see Demo](https://huy27201-weather.herokuapp.com/).
+[Click here to see Demo](https://huy27201-weather-forecast.netlify.app/).
 
 ## Usage
 
